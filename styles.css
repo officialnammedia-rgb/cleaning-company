@@ -255,7 +255,7 @@ header .container {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
 }
 
@@ -273,7 +273,24 @@ header .container {
 .nav-cta {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+}
+
+/* Medium screen adjustments for laptop screens where menu might overflow */
+@media (min-width: 1081px) and (max-width: 1250px) {
+  .nav-links {
+    gap: 14px;
+  }
+  .nav-links a {
+    font-size: 0.88rem;
+  }
+  .logo {
+    font-size: 1.3rem;
+  }
+  .logo svg {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .hamburger {
@@ -313,7 +330,7 @@ header .container {
   transform: rotate(-45deg);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1080px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -324,7 +341,8 @@ header .container {
     box-shadow: -10px 0 30px rgba(0,0,0,0.05);
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
+    gap: 30px;
     transition: right var(--transition-normal);
     z-index: 1005;
   }
@@ -338,7 +356,42 @@ header .container {
   }
   
   .nav-cta .btn {
-    display: none; /* Hide button in sticky header for mobile to keep clean, show in menu or just use hero */
+    display: inline-flex;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-cta .btn {
+    display: none; /* Hide on small phones to prevent logo squeezing */
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .logo svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Mobile-only CTA in the drawer */
+.mobile-only-cta {
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.mobile-only-cta .btn {
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  .mobile-only-cta {
+    display: block;
   }
 }
 
