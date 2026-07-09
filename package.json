@@ -1,0 +1,12 @@
+{
+  "name": "cleaning-pitch-demo",
+  "version": "1.0.0",
+  "description": "Demo pitch website for Australian cleaning companies",
+  "scripts": {
+    "dev": "npx -y http-server . -p 8088"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
