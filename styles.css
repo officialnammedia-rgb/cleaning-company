@@ -243,6 +243,12 @@ header .container {
   font-weight: 800;
   font-size: 1.5rem;
   color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.brand-name-text {
+  white-space: nowrap;
 }
 
 .logo svg {
@@ -250,6 +256,7 @@ header .container {
   height: 32px;
   fill: var(--accent);
   transition: fill var(--transition-normal);
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -263,6 +270,7 @@ header .container {
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--text-main);
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -273,24 +281,12 @@ header .container {
 .nav-cta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
-/* Medium screen adjustments for laptop screens where menu might overflow */
-@media (min-width: 1081px) and (max-width: 1250px) {
-  .nav-links {
-    gap: 14px;
-  }
-  .nav-links a {
-    font-size: 0.88rem;
-  }
-  .logo {
-    font-size: 1.3rem;
-  }
-  .logo svg {
-    width: 28px;
-    height: 28px;
-  }
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.875rem;
 }
 
 .hamburger {
@@ -341,8 +337,7 @@ header .container {
     box-shadow: -10px 0 30px rgba(0,0,0,0.05);
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
+    gap: 40px;
     transition: right var(--transition-normal);
     z-index: 1005;
   }
@@ -356,42 +351,17 @@ header .container {
   }
   
   .nav-cta .btn {
-    display: inline-flex;
-    padding: 8px 16px;
-    font-size: 0.85rem;
+    display: none; /* Hide button in sticky header for mobile to keep clean, show in menu or just use hero */
   }
 }
 
-@media (max-width: 576px) {
-  .nav-cta .btn {
-    display: none; /* Hide on small phones to prevent logo squeezing */
-  }
-  
+@media (max-width: 480px) {
   .logo {
     font-size: 1.2rem;
   }
-  
   .logo svg {
     width: 28px;
     height: 28px;
-  }
-}
-
-/* Mobile-only CTA in the drawer */
-.mobile-only-cta {
-  display: none;
-  width: 100%;
-  text-align: center;
-  padding: 0 40px;
-}
-
-.mobile-only-cta .btn {
-  width: 100%;
-}
-
-@media (max-width: 1080px) {
-  .mobile-only-cta {
-    display: block;
   }
 }
 
